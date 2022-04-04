@@ -20,7 +20,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "django-polls"},
-    packages=setuptools.find_packages(where="django-polls"),
+    package_dir={"": "django-polls/polls"},
+    packages=setuptools.find_packages(where="django-polls/polls"),
     python_requires=">=3.6",
 )
