@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Question, Choice
+from .models import Question, Choice, Professore, Richiesta
 
 
 class ChoiceInline(admin.TabularInline):
@@ -21,4 +21,4 @@ class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['question_text']
 
 
-admin.site.register(Question, QuestionAdmin)
+admin.site.register(Question, QuestionAdmin, Professore, Richiesta)

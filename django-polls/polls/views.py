@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 
-from .models import Choice, Question
+from .models import Choice, Question, Richiesta, Professore
 
 
 class IndexView(generic.ListView):
@@ -54,3 +54,13 @@ def vote(request, question_id):
 
 def modulo(request):
     return render(request, 'polls/paginaProva.html')
+
+
+class RichiestaCreateView(generic.CreateView):
+    model = Richiesta
+
+    def get_form(self, form_class=None):
+        form = super(RichiestaCreateView, self).get_form(form_class)
+        for field in form.fields:
+            field.required = True
+        return form
