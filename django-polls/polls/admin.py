@@ -21,4 +21,6 @@ class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['question_text']
 
 
-admin.site.register(Question, QuestionAdmin, Professore, Richiesta)
+admin.site.register(Question, QuestionAdmin)
+admin.site.register(Professore)
+admin.site.register(Richiesta)
