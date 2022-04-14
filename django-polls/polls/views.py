@@ -58,6 +58,9 @@ def modulo(request):
 
 class RichiestaCreateView(generic.CreateView):
     model = Richiesta
+    fields = []
+    for key,value in Richiesta._meta.get_fields():
+        fields.append(value)
 
     def get_form(self, form_class=None):
         form = super(RichiestaCreateView, self).get_form(form_class)
