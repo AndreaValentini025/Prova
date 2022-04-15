@@ -60,8 +60,3 @@ class RichiestaCreateView(generic.CreateView):
     model = Richiesta
     fields = ['nome','cognome','codice_fiscale','matricola','tutor','sede','durata','data_inizio','data_fine','obiettivi','autocertificazione']
 
-    def get_form(self, form_class=None):
-        form = super(RichiestaCreateView, self).get_form(form_class)
-        for field in form.fields:
-            field.required = True
-        return form
